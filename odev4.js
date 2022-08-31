@@ -30,17 +30,16 @@ const input = {
 };
 
 const denormalizedData = (data) => {
-  console.log(
-    data.data.map((row) =>
-      data.cols.reduce((prev, curr, indx) => {
-        if (!prev[curr]) prev[curr] = row[indx];
-        return prev;
-      }, {})
-    )
+  return data.data.map((row) =>
+    data.cols.reduce((prev, curr, indx) => {
+      if (!prev[curr]) prev[curr] = row[indx];
+      return prev;
+    }, {})
   );
 };
 
-denormalizedData(input);
+const result = denormalizedData(input);
+console.log(result);
 
 const sampleoutput = [
   {
